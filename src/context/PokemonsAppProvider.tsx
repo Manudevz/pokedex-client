@@ -13,12 +13,13 @@ const PokemonProvider = ({ children }: PokemonProviderProps) => {
   const [isDataFetched, setIsDataFetched] = useState(false);
 
   useEffect(() => {
-    if (currentPage !== 0) {
-      setChangePage(true);
-    }
+
     const source: CancelTokenSource = axios.CancelToken.source();
 
     const getPokemons = async (offset: number) => {
+      if (offset !== 0) {
+        setChangePage(true);
+      }
       try {
         const response = await axios.get<Pokemons[]>(
           `https://pokedex-server-y8gj.onrender.com/pokemons?offset=${offset}&limit=20`,
