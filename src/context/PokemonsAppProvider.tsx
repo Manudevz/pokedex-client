@@ -13,7 +13,9 @@ const PokemonProvider = ({ children }: PokemonProviderProps) => {
   const [isDataFetched, setIsDataFetched] = useState(false);
 
   useEffect(() => {
-    setChangePage(true);
+    if (currentPage !== 0) {
+      setChangePage(true);
+    }
     const source: CancelTokenSource = axios.CancelToken.source();
 
     const getPokemons = async (offset: number) => {
