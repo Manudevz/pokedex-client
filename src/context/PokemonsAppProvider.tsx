@@ -17,7 +17,7 @@ const PokemonProvider = ({ children }: PokemonProviderProps) => {
     const source: CancelTokenSource = axios.CancelToken.source();
 
     const getPokemons = async (offset: number) => {
-      if (isDataFetched) {
+      if (offset !== 0) {
         setChangePage(true);
       }
       try {
