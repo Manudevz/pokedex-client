@@ -12,9 +12,7 @@ const PokemonProvider = ({ children }: PokemonProviderProps) => {
   const [isDataFetched, setIsDataFetched] = useState(false);
 
   useEffect(() => {
-    if (isDataFetched) {
-      setChangePage(true);
-    }
+    setChangePage(true);
 
     const source: CancelTokenSource = axios.CancelToken.source();
 
