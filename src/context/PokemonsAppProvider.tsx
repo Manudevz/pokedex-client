@@ -20,7 +20,7 @@ const PokemonProvider = ({ children }: PokemonProviderProps) => {
 
       try {
         const response = await axios.get<Pokemons[]>(
-          `https://pokedex-server-y8gj.onrender.com/pokemons?offset=${offset}&limit=20`,
+          `https://pokedex-0xm9.onrender.com/pokemons?offset=${offset}&limit=20`,
           {
             cancelToken: source.token
           }
